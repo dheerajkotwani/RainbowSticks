@@ -23,6 +23,7 @@ import project.dheerajkotwani.rainbowsticks.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
+    private val list: ArrayList<StickView> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         val h = display.heightPixels/2
         val w = display.widthPixels/2
 
-        val list: ArrayList<StickView> = ArrayList()
         for (i in (0 until 24)) {
 
             val view = StickView(this)
@@ -49,5 +49,20 @@ class MainActivity : AppCompatActivity() {
             list.add(view)
         }
 
+        binding.root.setOnClickListener {
+            startAnimation()
+        }
+
     }
+
+    private fun startAnimation() {
+        for (view in list) {
+            view.animate()
+                .rotation(view.rotation + 3600f)
+                .setDuration(10_000L)
+                .start()
+        }
+    }
+
+
 }

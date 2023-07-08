@@ -8,4 +8,13 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="transparent">#00FFFFFF</color>
+
+    <string-array name="rainbow_colors">
+        <item>#FF0000</item>
+        <item>#FFB700</item>
+        <item>#B3FF00</item>
+        <item>#00FFEA</item>
+        <item>#0048FF</item>
+        <item>#BB00FF</item>
+    </string-array>
 </resources>
